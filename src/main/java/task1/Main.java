@@ -49,14 +49,14 @@ public class Main {
         voteFacts.forEach(System.out::println);
     }
 
-    private static List<Fact> jsonToList(String json) {
+    public static List<Fact> jsonToList(String json) {
         Type listType = new TypeToken<List<Fact>>(){}.getType();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         return gson.fromJson(json, listType);
     }
 
-    private static String inputStreamToJson(InputStream inputStream) throws IOException {
+    public static String inputStreamToJson(InputStream inputStream) throws IOException {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             StringBuilder stringBuilder = new StringBuilder();
             String str;
